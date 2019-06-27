@@ -1,7 +1,6 @@
 <template>
   <div class="model">
-    <h1>Manufacturer page</h1>
-    <h2>{{manufacturer}}</h2>
+    <h2>I have the following {{manufacturer}} models:</h2>
     <ul>
       <li v-for="(value, key) in cars[manufacturer]"><router-link :to="`/cars/${manufacturer}/${key}`" tag="a">{{value.title}}</router-link></li>
     </ul>

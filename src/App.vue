@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="header">
-        <div class="logo"><router-link to="/"><img alt="Site logo" src="https://dl.dropbox.com/s/pds622rxjatydvk/logo.jpg" title="Home"></router-link></div>
+        <div class="logo"><router-link to="/">kvipe hot wheels collection</router-link></div>
     </header>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -16,9 +16,7 @@
 	       </ul>
 	    </aside>
 	    <div class="content">
-	    	<transition name="fade">
-	    	  <router-view></router-view>
-	    	</transition>
+	   		<router-view></router-view>
 	    </div>
 	  </div>
 	  <footer>
@@ -41,5 +39,5 @@ export default {
 </script>
 
 <style>
-	
+	@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
 </style>

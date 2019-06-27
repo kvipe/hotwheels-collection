@@ -1,9 +1,8 @@
 <template>
   <div class="model">
-    <h1>Model page</h1>
-  	<h2>This page about <span><router-link :to="`/cars/${manufacturer}`">{{manufacturer}}</router-link>&nbsp;</span>{{cars[manufacturer][model].title}} car</h2>
+  	<h2><span><router-link :to="`/cars/${manufacturer}`">{{manufacturer}}</router-link>&nbsp;</span>{{cars[manufacturer][model].title}}</h2>
   	<div class="photos">
-  		<p v-for="img in cars[manufacturer][model].pictures">{{img}}</p>
+  		<img v-for="img in cars[manufacturer][model].pictures" :src="img">
   	</div>
   </div>
 </template>
