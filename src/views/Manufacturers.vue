@@ -9,7 +9,7 @@
 
 <script>
 	import Cars from '@/assets/data/cars.js'
-
+	
 	export default {
 	  data(){
 	    return {
