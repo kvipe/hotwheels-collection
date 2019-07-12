@@ -1,31 +1,31 @@
 <template>
   <div class="model">
-  	<h2><span><router-link :to="`/cars/${manufacturer}`">{{manufacturer}}</router-link>&nbsp;</span>{{cars[manufacturer][model].title}}</h2>
+  	<h2><span>{{manufacturer.toUpperCase()}}&nbsp;</span>{{cars[manufacturer][model].title}} (<a :href="cars[manufacturer][model].wiki">Wiki link</a>)</h2>
+  	<gallery :images="cars[manufacturer][model].pictures" :index="index" @close="index = null"></gallery>
   	<div class="photos">
   		<div class="photo">
-  			<img v-for="img in cars[manufacturer][model].pictures" v-gallery:photos :src="img">
+  			<div class="photo-preview" v-for="(image, imageIndex) in cars[manufacturer][model].pictures":key="imageIndex"@click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', width: '350px', height: '200px', margin: 'auto'}"></div>
   		</div>
   	</div>
   </div>
 </template>
 
 <script>
-	import Vue from 'vue'
 	import Cars from '@/assets/data/cars.js'
-	import gallery from 'img-vuer'
-	Vue.use(gallery, {
-	  swipeThreshold: 150, // default 100 ,new in 0.12.0
-	  isIndexShow: true, // show image index
-	  useCloseButton: false, // trigger gallery close with only close button
-	})
+	import VueGallery from 'vue-gallery'
+
 
 	export default {
 	  data(){
 	    return {
 	      "cars": Cars,
 	      "manufacturer" : this.$route.params.manufacturer,
-	      "model" : this.$route.params.model
+	      "model" : this.$route.params.model,
+	      "index": null
 	    }
+	  },
+	  components: {
+			'gallery': VueGallery
 	  }
 	}
 </script>

@@ -16,7 +16,9 @@
 	       </ul>
 	    </aside>
 	    <div class="content">
-	   		<router-view></router-view>
+	    	<transition name="fade" mode="out-in">
+	    		<router-view></router-view>
+	    	</transition>
 	    </div>
 	  </div>
 	  <footer>
@@ -39,5 +41,11 @@ export default {
 </script>
 
 <style>
-	@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+	.fade-enter-active, .fade-leave-active {
+	  transition: opacity .5s;
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	  opacity: 0;
+	}
 </style>

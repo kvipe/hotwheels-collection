@@ -8,14 +8,14 @@ a
 #app
 {
 /* 	background: lightcoral; */
-	font-family: 'Major Mono Display', monospace;
+	font-family: 'Raleway', sans-serif;
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
 
 	.header
 	{
-/* 		background: yellow; */
+		background: rgb(10, 25, 47);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -23,9 +23,13 @@ a
 		min-height: 90px;
 		border-bottom: 2px solid #000;
 
-		img
+		.logo
 		{
-			display: block;
+			a
+			{
+				color: #fff;
+				font-weight: bold;
+			}
 		}
 	}
 
@@ -41,12 +45,26 @@ a
 			
 			.model
 			{
+				ul
+				{
+					padding-left: 20px;
+					li
+					{
+						list-style-type: circle;
+					}
+				}
+
 				.photos
 				{
 					.photo
 					{
 						width: 60%;
 						margin: auto;
+
+						.photo-preview
+						{
+							
+						}
 					}
 				}
 			}
