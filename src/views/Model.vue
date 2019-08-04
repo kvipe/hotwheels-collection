@@ -4,7 +4,7 @@
   	<gallery :images="cars[manufacturer][model].pictures" :index="index" @close="index = null"></gallery>
   	<div class="photos">
   		<div class="photo">
-  			<div class="photo-preview" v-for="(image, imageIndex) in cars[manufacturer][model].pictures":key="imageIndex"@click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', width: '350px', height: '200px', margin: 'auto'}"></div>
+  			<div class="photo-preview" v-for="(image, imageIndex) in cars[manufacturer][model].pictures":key="imageIndex"@click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', width: '350px', height: '200px', margin: '10px auto', backgroundPosition: 'center'}"></div>
   		</div>
   	</div>
   </div>
